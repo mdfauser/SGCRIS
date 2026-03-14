@@ -31,10 +31,11 @@ This study concludes that integrating imagined subgoals into single goal contras
 
 ## 💻 Repository Structure
 
-- `train_fetch.py` - Main training script for Gymnasium-Robotics environments.
-- `models/` - Implementation of the CRL agent and Subgoal Selection logic.
-- `utils/` - Experience replay buffers and negative mining utilities.
-- `thesis.pdf` - Full Bachelor's Thesis document.
+- **`agents/`**: Contains the core RL logic. `stable_crl.py` is the baseline, while `sgcris.py` implements the subgoal extension.
+- **`core/`**: Management of replay buffers (`buffers.py`), metrics calculation, and data persistence.
+- **`utils/`**: General utilities including custom logging and monitoring.
+- **`train_fetch.py`**: The primary entry point for starting training runs.
+- **`thesis.pdf`**: The full Bachelor's Thesis document for theoretical reference.
 
 ---
 
@@ -62,10 +63,14 @@ python train_fetch.py \
 
 ### 3. Key Arguments
 
-| Flag              | Default |                     Description                     |
-| :---------------- | :-----: | :-------------------------------------------------: |
-| --use_subgoals    |  True   |        Activtes subgoals for contrastive RL.        |
-| --use_single_goal |  True   | Activates using one single hard goals for training. |
+| Flag              |        Default         |                         Description                         |
+| :---------------- | :--------------------: | :---------------------------------------------------------: |
+| --env_name        | "FetchPickAndPlace-v2" |            Setting the enviroment for training.             |
+| --start_timesteps |         10000          |  Random off-policy data-collection before learning begins.  |
+| --max_episodes    |         30000          |                 Maximum number of episodes.                 |
+| --use_subgoals    |          True          |           Activates subgoals for contrastive RL.            |
+| --use_single_goal |          True          |     Activates using one single hard goals for training.     |
+| --load_model      |          True          | Loads pretrained-model for the with the name of "exp_name". |
 
 ## References and Acknowledgements
 

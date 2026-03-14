@@ -46,9 +46,9 @@ def future_sampling(batch_size, trajectory_len, to_device, keys):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--env_name",           default="FetchReach-v2")
+    parser.add_argument("--env_name",           default="FetchPickAndPlace-v2")
     parser.add_argument("--distance_threshold", default=0.05, type=float)
-    parser.add_argument("--start_timesteps",    default=1000, type=int)
+    parser.add_argument("--start_timesteps",    default=10000, type=int)
     parser.add_argument("--max_timesteps",      default=1e+6, type=int)
     parser.add_argument("--max_episode_length", default=50, type=int)
     parser.add_argument("--max_episodes",       default=30000, type=int)
