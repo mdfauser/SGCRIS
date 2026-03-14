@@ -9,10 +9,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-from buffers import EpisodicBuffer, FunctionBuffer
-from logger import SimpleLogger
-from stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
-from metrics_plotter import Plotter
+from core.buffers import EpisodicBuffer, FunctionBuffer
+from utils.logger import SimpleLogger
+from agents.stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
+from core.metrics import Plotter
 
 
 def goal_to_obs(goal):

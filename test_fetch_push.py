@@ -8,9 +8,9 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-from buffers import EpisodicBuffer, FunctionBuffer
-from logger import SimpleLogger
-from stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
+from core.buffers import EpisodicBuffer, FunctionBuffer
+from utils.logger import SimpleLogger
+from agents.stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
 
 
 if __name__ == "__main__":

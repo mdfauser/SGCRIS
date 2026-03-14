@@ -8,9 +8,9 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-from buffers import EpisodicBuffer, FunctionBuffer
-from logger import SimpleLogger
-from stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
+from core.buffers import EpisodicBuffer, FunctionBuffer
+from utils.logger import SimpleLogger
+from agents.stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
 
 
 def goal_to_obs(goal):
@@ -62,19 +62,18 @@ if __name__ == "__main__":
     parser.add_argument("--lr",                 default=3e-4, type=float)
     parser.add_argument("--repr_dim",           default=64, type=int)
     parser.add_argument("--samples_per_insert", default=256, type=int)
-    # low => peaky; high => flatten (0,1)
     parser.add_argument("--temperature",        default=0.7, type=float)
     parser.add_argument('--is_discrete',        default=False, type=bool)
-    parser.add_argument('--use_subgoals',       default=False, type=bool)
-    parser.add_argument('--use_single_goal',    default=False, type=bool)
+    parser.add_argument('--use_subgoals',       default=True, type=bool)
+    parser.add_argument('--use_single_goal',    default=True, type=bool)
     parser.add_argument("--load_model",         default=False, type=bool)
     parser.set_defaults(log_loss=True)
     args = parser.parse_args()
     print(args)
 
-    env = gym.make(args.env_name, render_mode="human",
+    env = gym.make(args.env_name,
                    max_episode_steps=args.max_episode_length)  # , render_mode="human")
-    test_env = gym.make("FetchReach-v2", render_mode="rgb_array",
+    test_env = gym.make("FetchReach-v2",
                         max_episode_steps=args.max_episode_length)
 
     # action_dim = env.action_space.shape[0]

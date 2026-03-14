@@ -72,6 +72,10 @@ python train_fetch.py \
 - Thesis: Marius David Fauser, "Single Goal Contrastive Learning for Goal-Conditioned Reinforcement Learning," Ulm University, 2025.
 - Base Paper: Eysenbach et al. (2024), "A Single Goal is All You Need."
 
-## Note
+## ⚠️ Note on Implementation & Reproducibility
 
-The results presented in the thesis were generated using a high-performance computing cluster at Ulm University. This repository contains a standalone implementation optimized for readability and local testing. Due to hardware constraints, local training may show higher variance than the reported results.
+The code in this repository represents a **stable, standalone version** of the project. Please note:
+
+- **Feature Set:** This version focus on the core SGCRIS logic. Some experimental features used in the final thesis (specifically [Mention 1-2 features if you remember them]) were part of a high-performance version hosted on university infrastructure and are not included here.
+- **Loss Functions:** The loss implementations here are simplified for clarity and local execution.
+- **Hardware:** The results in the `thesis.pdf` were generated using a high-performance computing cluster. Running this specific code locally will demonstrate the logic but may yield different convergence patterns due to these versioning differences.
