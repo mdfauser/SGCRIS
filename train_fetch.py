@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from core.buffers import EpisodicBuffer, FunctionBuffer
 from utils.logger import SimpleLogger
 from agents.stable_crl import ContinuousFeedForwardPolicy, ContrastiveQf, StableContrastiveRL
-from agents.subgoals_for_crl import ContrastiveRLwithImaginedSubgoals, LaplacePolicy, ContrastiveSubgoalPolicy
+from agents.sgcris import ContrastiveRLwithImaginedSubgoals, LaplacePolicy, ContrastiveSubgoalPolicy
 from core.metrics import Plotter
 from core.data_storage import DataStorage
 
